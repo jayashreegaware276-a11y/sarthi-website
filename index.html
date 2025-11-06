@@ -1,175 +1,457 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saarthi Tours & Travels - Cab Booking in Nashik, Maharashtra</title>
-  <meta name="description" content="Saarthi Tours & Travels - Reliable cab service in Nashik, Maharashtra. Local and outstation trips to Shirdi, Pune, Mumbai, Bhimashankar, Ellora, and more. Book your cab online today!" />
-  <meta name="keywords" content="cab booking Nashik, taxi service Nashik, Saarthi Tours and Travels, Nashik to Shirdi cab, Nashik to Pune taxi, Nashik to Mumbai cab, outstation cab Nashik" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saarthi Tours & Travels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #fffaf2;
-      color: #333;
+    :root{
+      --accent:#0b6df0;
+      --accent-2:#06b6d4;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.92);
     }
-    header {
-      background: #3b2f2f;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    *{box-sizing:border-box;font-family:'Poppins',system-ui,Arial,sans-serif}
+    body{
+      margin:0;
+      color:#0b1220;
+      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    header img {
-      height: 80px;
+    /* overlay to darken background for readability */
+    .overlay{background:linear-gradient(rgba(3,7,18,0.45),rgba(3,7,18,0.45));min-height:100vh;}
+    .container{max-width:1150px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{height:64px;width:64px;object-fit:contain;border-radius:10px;border:2px solid rgba(255,255,255,0.12)}
+    .brand h1{color:#fff;font-size:20px;margin:0}
+    nav a{color:rgba(255,255,255,0.9);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent-2)}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 440px;gap:28px;align-items:center;padding:28px 0}
+    .hero h2{color:#fff;font-size:34px;margin:0 0 10px}
+    .hero p{color:rgba(230,238,252,0.9);margin:0 0 18px}
+    /* booking card */
+    .card{background:rgba(255,255,255,0.96);border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(2,6,23,0.12)}
+    label{display:block;margin:8px 0 6px;font-size:13px;color:var(--muted)}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px}
+    .row{display:flex;gap:12px}
+    .row .col{flex:1}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
+    .btn.alt{background:#10b981}
+    .muted{color:var(--muted);font-size:13px}
+    /* sections */
+    main{padding:20px 0 60px}
+    .section-title{font-size:20px;margin-bottom:12px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{background:rgba(255,255,255,0.95);padding:16px;border-radius:10px;text-align:center;box-shadow:0 6px 18px rgba(11,13,20,0.06)}
+    .service h4{margin:8px 0}
+    .routes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .route{background:rgba(255,255,255,0.95);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(11,13,20,0.06)}
+    .flex-between{display:flex;justify-content:space-between;align-items:center}
+    footer{padding:20px 0;color:#fff}
+    /* responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .routes{grid-template-columns:repeat(2,1fr)}
     }
-    nav {
-      background-color: #c29a5d;
-      text-align: center;
-      padding: 10px;
+    @media (max-width:620px){
+      .services{grid-template-columns:1fr}
+      .routes{grid-template-columns:1fr}
+      .brand img{height:52px;width:52px}
+      header{padding:12px 0}
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .hero {
-      text-align: center;
-      background: url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1200&q=60') center/cover no-repeat;
-      color: white;
-      padding: 100px 20px;
-      border-radius: 10px;
-    }
-    .hero h1 {
-      font-size: 2.5em;
-      background: rgba(0,0,0,0.5);
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 10px;
-    }
-    h2 {
-      color: #3b2f2f;
-      border-bottom: 3px solid #c29a5d;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-    .service-list, .route-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    .service-list li, .route-list li {
-      background: #f3e3ca;
-      margin: 8px 0;
-      padding: 10px;
-      border-radius: 8px;
-    }
-    form {
-      background: #fef5e7;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    form input, form textarea {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    form button {
-      background-color: #c29a5d;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    footer {
-      background: #3b2f2f;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-    }
+    /* small helpers */
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass-2);font-weight:600}
+    .price{font-weight:800;color:var(--accent);font-size:18px}
+    .note{font-size:13px;color:var(--muted)}
   </style>
 </head>
 <body>
-  <header>
-    <img src="sarthi-tours-travel.png" alt="Saarthi Tours & Travels Logo" />
-    <h1>Saarthi Tours & Travels</h1>
-    <p>Nashik, Maharashtra - Reliable Cab Booking Service</p>
-  </header>
+  <div class="overlay">
+    <div class="container">
+      <header>
+        <div class="brand">
+          <img src="sarthi tour travel.png" alt="Saarthi Logo" onerror="this.style.display='none'">
+          <div>
+            <h1 style="color:#fff">Saarthi Tours & Travels</h1>
+            <div class="muted" style="color:rgba(255,255,255,0.9)">Nashik • Trusted journeys across Maharashtra</div>
+          </div>
+        </div>
+        <nav>
+          <a href="#book">Book Now</a>
+          <a href="#services">Services</a>
+          <a href="#routes">Popular Routes</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#routes">Popular Routes</a>
-    <a href="#booking">Booking</a>
-    <a href="#contact">Contact</a>
-  </nav>
+      <!-- HERO + Booking -->
+      <section class="hero" id="top">
+        <div>
+          <h2>Comfortable cabs & tempo travellers from Nashik</h2>
+          <p>Book private cabs, airport pickups, family trips and outstation journeys. Transparent fares, punctual drivers and safe vehicles. Select your route to see instant estimates.</p>
 
-  <section class="hero">
-    <h1>Book Your Ride from Nashik Today!</h1>
-    <p>Local & Outstation Trips | Safe Drivers | 24/7 Cab Availability</p>
-  </section>
+          <div style="margin-top:16px;background:rgba(255,255,255,0.06);padding:10px;border-radius:10px;display:inline-block;">
+            <span class="chip">Pilgrimage</span>
+            <span class="chip" style="margin-left:8px">Weekend Trips</span>
+            <span class="chip" style="margin-left:8px">Airport Pickup</span>
+          </div>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Welcome to <strong>Saarthi Tours & Travels</strong> – your trusted cab partner based in <strong>Nashik, Maharashtra</strong>. We provide safe, comfortable, and affordable cab services for both local travel and long-distance journeys across Maharashtra. Whether you're planning a trip to <strong>Shirdi, Pune, Mumbai, Bhimashankar, Ellora</strong> or any other destination, we are here to serve you with reliable drivers and clean vehicles.</p>
-  </section>
+          <div style="margin-top:18px;color:rgba(230,238,252,0.95)" class="note">Tip: Fill the booking form on the right and tap <strong>Proceed to Book</strong> to send booking details directly on WhatsApp.</div>
+        </div>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul class="service-list">
-      <li>Local City Rides within Nashik</li>
-      <li>Outstation Cab Booking from Nashik</li>
-      <li>Airport Pick-up & Drop (Mumbai / Pune)</li>
-      <li>Pilgrimage Tours (3 Jyotirlinga Darshan, Shirdi, Bhimashankar, Trimbakeshwar)</li>
-      <li>Corporate & Family Trip Packages</li>
-    </ul>
-  </section>
+        <aside>
+          <div class="card" id="book">
+            <strong style="font-size:16px">Book a Cab</strong>
+            <p class="muted">Fill details & get instant estimate. WhatsApp booking will open on proceed.</p>
 
-  <section id="routes">
-    <h2>Popular Routes</h2>
-    <ul class="route-list">
-      <li>Nashik → Shirdi</li>
-      <li>Nashik → Pune</li>
-      <li>Nashik → Mumbai</li>
-      <li>Nashik → Bhimashankar</li>
-      <li>Nashik → Ellora Caves</li>
-      <li>Nashik → Trimbakeshwar</li>
-    </ul>
-  </section>
+            <label>Full Name</label>
+            <input id="name" placeholder="Your full name">
 
-  <section id="booking">
-    <h2>Book a Cab</h2>
-    <p>Fill out the form below and we will confirm your booking soon:</p>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Full Name" required />
-      <input type="tel" name="phone" placeholder="Mobile Number" required />
-      <input type="text" name="pickup" placeholder="Pickup Location (Start from Nashik)" required />
-      <input type="text" name="destination" placeholder="Destination" required />
-      <textarea name="message" placeholder="Any special request..." rows="3"></textarea>
-      <button type="submit">Submit Booking</button>
-    </form>
-  </section>
+            <label>Phone Number</label>
+            <input id="phone" placeholder="91XXXXXXXXXX">
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 <strong>Call / WhatsApp:</strong> 8177940572</p>
-    <p>📧 <strong>Email:</strong> jayashreegaware8@gmail.com</p>
-    <p>📍 <strong>Base:</strong> Nashik, Maharashtra</p>
-  </section>
+            <label>From</label>
+            <input id="from" value="Nashik" readonly>
 
-  <footer>
-    <p>© 2025 Saarthi Tours & Travels | Designed with ❤️ by Jayashree Gaware</p>
-  </footer>
+            <label>Destination</label>
+            <select id="destination">
+              <option value="">— Select destination —</option>
+            </select>
+
+            <div class="row">
+              <div class="col">
+                <label>Date</label>
+                <input id="date" type="date">
+              </div>
+              <div class="col">
+                <label>Passengers</label>
+                <input id="pax" type="number" min="1" value="1">
+              </div>
+            </div>
+
+            <label>Vehicle</label>
+            <select id="vehicle">
+              <option value="sedan">Sedan (4 seater)</option>
+              <option value="suv">SUV (6 seater)</option>
+              <option value="tempo">Tempo Traveller (12-18 seater)</option>
+            </select>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+              <div>
+                <div class="muted">Estimated Fare</div>
+                <div id="price" class="price">₹ —</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end">
+                <button class="btn" onclick="openSummary()">Proceed to Book</button>
+                <button class="btn alt" onclick="openWhatsAppContact()">Contact via WhatsApp</button>
+              </div>
+            </div>
+
+            <div style="margin-top:10px" class="note">Or email us: <a href="mailto:jayashreegaware8@gmail.com">jayashreegaware8@gmail.com</a></div>
+          </div>
+        </aside>
+      </section>
+
+    </div>
+
+    <main class="container">
+      <!-- About -->
+      <section id="about" class="card" style="margin-bottom:18px">
+        <h3 class="section-title">About Saarthi</h3>
+        <p class="muted">Saarthi Tours & Travels is a Nashik-based travel service offering local & outstation cab services, airport pickups, family packages and pilgrimage tours. Our vehicles are maintained, drivers are experienced and fares are transparent. Book with confidence for single-day trips or multi-day itineraries.</p>
+      </section>
+
+      <!-- Services -->
+      <section id="services" style="margin-bottom:18px">
+        <h3 class="section-title">Our Services</h3>
+        <div class="services">
+          <div class="service">
+            <img src="https://images.unsplash.com/photo-1549921296-3f8a7d8c1f1e?auto=format&fit=crop&w=800&q=60" style="width:100%;height:120px;object-fit:cover;border-radius:8px" alt="">
+            <h4>Local City Rides</h4>
+            <p class="muted">Short trips inside Nashik — hourly or fixed fares, reliable drivers.</p>
+          </div>
+          <div class="service">
+            <img src="https://images.unsplash.com/photo-1502870781332-9d8f9a1b4328?auto=format&fit=crop&w=800&q=60" style="width:100%;height:120px;object-fit:cover;border-radius:8px" alt="">
+            <h4>Airport Pickup / Drop</h4>
+            <p class="muted">Pickup from Nashik airport or drop to nearest airports with flight tracking.</p>
+          </div>
+          <div class="service">
+            <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=60" style="width:100%;height:120px;object-fit:cover;border-radius:8px" alt="">
+            <h4>Outstation Cabs</h4>
+            <p class="muted">One-way & round-trip outstation journeys — competitive fares & safety-first service.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Routes -->
+      <section id="routes" style="margin-bottom:18px">
+        <h3 class="section-title">Popular Outstation Routes (From Nashik)</h3>
+        <div class="routes" id="routesGrid">
+          <!-- JS populates routes -->
+        </div>
+        <div style="margin-top:10px" class="muted">Don't see your route? Choose a nearby city in the destination field or contact us on WhatsApp — we cover most Maharashtra routes and beyond.</div>
+      </section>
+
+      <!-- Booking form (alternate full form view) -->
+      <section id="bookform" class="card" style="margin-bottom:18px">
+        <h3 class="section-title">Quick Booking Form</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <input id="bf_name" placeholder="Full name">
+          <input id="bf_phone" placeholder="Phone number">
+          <select id="bf_destination">
+            <option value="">Select destination</option>
+          </select>
+          <input id="bf_date" type="date" placeholder="Travel date">
+          <select id="bf_vehicle">
+            <option value="sedan">Sedan (4 seater)</option>
+            <option value="suv">SUV (6 seater)</option>
+            <option value="tempo">Tempo Traveller (12-18 seater)</option>
+          </select>
+          <input id="bf_pax" type="number" min="1" value="1" placeholder="Passengers">
+        </div>
+        <div style="margin-top:12px;display:flex;gap:12px;align-items:center">
+          <button class="btn" onclick="submitQuickForm()">Submit & WhatsApp</button>
+          <button class="btn alt" onclick="submitQuickEmail()">Submit via Email</button>
+          <div class="muted" style="margin-left:auto">We'll contact you shortly after you submit.</div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="card" style="margin-bottom:18px">
+        <h3 class="section-title">Contact & Support</h3>
+        <div class="flex-between" style="gap:16px;flex-wrap:wrap">
+          <div>
+            <p class="muted">Phone / WhatsApp</p>
+            <a href="https://wa.me/918177940572" target="_blank" style="text-decoration:none;color:var(--accent)">+91 81779 40572</a>
+            <p class="muted" style="margin-top:6px">Email</p>
+            <a href="mailto:jayashreegaware8@gmail.com" style="text-decoration:none;color:var(--accent)">jayashreegaware8@gmail.com</a>
+          </div>
+          <div style="min-width:220px">
+            <p class="muted">Office</p>
+            <div class="muted">Nashik, Maharashtra</div>
+            <div style="margin-top:8px" class="note">Available 7 days • 8:00 AM – 8:00 PM</div>
+          </div>
+        </div>
+      </section>
+
+      <footer style="text-align:center">
+        <div class="muted">© 2025 Saarthi Tours & Travels • Made with care in Nashik</div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Booking Summary Modal -->
+  <div id="modal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:99">
+    <div style="background:#fff;padding:18px;border-radius:12px;max-width:560px;width:94%">
+      <h3 style="margin-top:0">Confirm Booking</h3>
+      <div id="modalBody" style="margin-top:6px"></div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+        <button class="btn" onclick="confirmWhatsApp()">Send via WhatsApp</button>
+        <button class="btn alt" onclick="confirmEmail()">Send via Email</button>
+        <button style="background:#ef4444;color:#fff;border:0;padding:10px 14px;border-radius:8px" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // CONTACT
+    const WHATSAPP_NUMBER = '918177940572';
+    const EMAIL_ADDRESS = 'jayashreegaware8@gmail.com';
+
+    // Destinations + sample base price for sedan (approx)
+    const destinations = [
+      {id:'mumbai',name:'Mumbai',price:3500},
+      {id:'mumbai_rev',name:'Mumbai → Nashik (Mumbai to Nashik)',price:3500},
+      {id:'shirdi',name:'Shirdi',price:1800},
+      {id:'mahabaleshwar',name:'Mahabaleshwar',price:3800},
+      {id:'pune',name:'Pune',price:3200},
+      {id:'lonavala',name:'Lonavala',price:3300},
+      {id:'aurangabad',name:'Aurangabad',price:2500},
+      {id:'trimbakeshwar',name:'Trimbakeshwar',price:900},
+      {id:'igatpuri',name:'Igatpuri',price:1200},
+      {id:'bhandardara',name:'Bhandardara',price:1600},
+      {id:'saputara',name:'Saputara',price:4200},
+      {id:'bhimashankar',name:'Bhimashankar',price:2800},
+      {id:'ahmednagar',name:'Ahmednagar',price:2200},
+      {id:'solapur',name:'Solapur',price:5200},
+      {id:'tuljapur',name:'Tuljapur',price:4800},
+      {id:'goa',name:'Goa',price:8500},
+      {id:'kolhapur',name:'Kolhapur',price:6400},
+      {id:'surat',name:'Surat',price:7200},
+      {id:'nagpur',name:'Nagpur',price:9500},
+      {id:'dhule',name:'Dhule',price:3000}
+    ];
+
+    // Populate dropdowns & routes grid
+    const destSelect = document.getElementById('destination');
+    const routesGrid = document.getElementById('routesGrid');
+    const bfDestination = document.getElementById('bf_destination');
+
+    destinations.forEach(d=>{
+      const opt = document.createElement('option');
+      opt.value = d.id; opt.textContent = d.name; destSelect.appendChild(opt);
+
+      const opt2 = opt.cloneNode(true); bfDestination.appendChild(opt2);
+
+      // route card
+      const card = document.createElement('div');
+      card.className = 'route';
+      card.innerHTML = `<strong>${d.name.split(' → ')[0]}</strong><div class="muted" style="margin-top:6px">From Nashik • Starting <span class="price">₹ ${d.price.toLocaleString()}</span></div>
+                        <div style="margin-top:8px"><button style="border:0;background:var(--accent);color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer" onclick="selectRoute('${d.id}')">Choose</button></div>`;
+      routesGrid.appendChild(card);
+    });
+
+    // vehicle multiplier
+    const vehicleMultiplier = {sedan:1, suv:1.3, tempo:2};
+
+    // update price when dest/vehicle/pax changes
+    function computePrice(destId, vehicle, pax=1){
+      const dest = destinations.find(d=>d.id===destId);
+      if(!dest) return 0;
+      const base = dest.price || 0;
+      const mult = vehicleMultiplier[vehicle] || 1;
+      let total = Math.round(base * mult);
+      // small surcharge per extra pax for sedan/suv
+      if(pax>4 && vehicle!=='tempo') total += (pax-4)*150;
+      return total;
+    }
+
+    function updatePrice(){
+      const destId = document.getElementById('destination').value;
+      const vehicle = document.getElementById('vehicle').value;
+      const pax = parseInt(document.getElementById('pax').value) || 1;
+      const total = computePrice(destId, vehicle, pax);
+      document.getElementById('price').innerText = total>0 ? `₹ ${total.toLocaleString()}` : '₹ —';
+    }
+
+    document.getElementById('destination').addEventListener('change', updatePrice);
+    document.getElementById('vehicle').addEventListener('change', updatePrice);
+    document.getElementById('pax').addEventListener('input', updatePrice);
+
+    // choose route from card
+    function selectRoute(id){
+      document.getElementById('destination').value = id;
+      updatePrice();
+      window.scrollTo({top:200,behavior:'smooth'});
+    }
+
+    // Booking modal flow
+    function openSummary(){
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const from = document.getElementById('from').value;
+      const destId = document.getElementById('destination').value;
+      const destText = document.getElementById('destination').selectedOptions[0]?.text || '';
+      const date = document.getElementById('date').value || 'Flexible';
+      const pax = document.getElementById('pax').value || 1;
+      const vehicle = document.getElementById('vehicle').value;
+      const price = document.getElementById('price').innerText;
+
+      if(!name || !phone || !destId){
+        alert('Please enter your name, phone and choose a destination to proceed.');
+        return;
+      }
+
+      const body = `
+        <div style="display:grid;gap:8px">
+          <div><strong>Name:</strong> ${escapeHtml(name)}</div>
+          <div><strong>Phone:</strong> ${escapeHtml(phone)}</div>
+          <div><strong>From:</strong> ${escapeHtml(from)}</div>
+          <div><strong>To:</strong> ${escapeHtml(destText)}</div>
+          <div><strong>Date:</strong> ${escapeHtml(date)}</div>
+          <div><strong>Passengers:</strong> ${escapeHtml(pax)}</div>
+          <div><strong>Vehicle:</strong> ${escapeHtml(vehicle)}</div>
+          <div><strong>Estimated Price:</strong> ${escapeHtml(price)}</div>
+        </div>
+      `;
+      document.getElementById('modalBody').innerHTML = body;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal(){ document.getElementById('modal').style.display = 'none'; }
+
+    function confirmWhatsApp(){
+      // read details
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const phone = encodeURIComponent(document.getElementById('phone').value.trim());
+      const from = encodeURIComponent(document.getElementById('from').value);
+      const destText = encodeURIComponent(document.getElementById('destination').selectedOptions[0]?.text || '');
+      const date = encodeURIComponent(document.getElementById('date').value || 'Flexible');
+      const pax = encodeURIComponent(document.getElementById('pax').value || '1');
+      const vehicle = encodeURIComponent(document.getElementById('vehicle').value || '');
+      const price = encodeURIComponent(document.getElementById('price').innerText.replace('₹','').trim() || '');
+      const message = `Hello Saarthi Tours - New booking request.%0AName: ${name}%0APhone: ${phone}%0AFrom: ${from}%0ATo: ${destText}%0ADate: ${date}%0APassengers: ${pax}%0AVehicle: ${vehicle}%0AEstimated Price: ${price}`;
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+      window.open(url,'_blank');
+    }
+
+    function confirmEmail(){
+      const subject = encodeURIComponent('Booking request - Saarthi Tours & Travels');
+      const bodyParts = [];
+      bodyParts.push('Name: ' + document.getElementById('name').value.trim());
+      bodyParts.push('Phone: ' + document.getElementById('phone').value.trim());
+      bodyParts.push('From: ' + document.getElementById('from').value);
+      bodyParts.push('To: ' + document.getElementById('destination').selectedOptions[0]?.text || '');
+      bodyParts.push('Date: ' + (document.getElementById('date').value || 'Flexible'));
+      bodyParts.push('Passengers: ' + (document.getElementById('pax').value || '1'));
+      bodyParts.push('Vehicle: ' + (document.getElementById('vehicle').value || ''));
+      bodyParts.push('Estimated Price: ' + (document.getElementById('price').innerText || ''));
+      const mailto = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${encodeURIComponent(bodyParts.join('\\n'))}`;
+      window.location.href = mailto;
+    }
+
+    function openWhatsAppContact(){ window.open(`https://wa.me/${WHATSAPP_NUMBER}`,'_blank'); }
+
+    // Quick booking form functions
+    function submitQuickForm(){
+      const name = document.getElementById('bf_name').value.trim();
+      const phone = document.getElementById('bf_phone').value.trim();
+      const destId = document.getElementById('bf_destination').value;
+      const destText = document.getElementById('bf_destination').selectedOptions[0]?.text || '';
+      const date = document.getElementById('bf_date').value || 'Flexible';
+      const vehicle = document.getElementById('bf_vehicle').value;
+      const pax = document.getElementById('bf_pax').value || '1';
+      if(!name || !phone || !destId){ alert('Please fill name, phone and destination.'); return; }
+      const priceVal = computePrice(destId, vehicle, parseInt(pax));
+      const message = `Hello Saarthi Tours, I would like to book a ride.%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AFrom: Nashik%0ATo: ${encodeURIComponent(destText)}%0ADate: ${encodeURIComponent(date)}%0APassengers: ${encodeURIComponent(pax)}%0AVehicle: ${encodeURIComponent(vehicle)}%0AEstimated Price: ${encodeURIComponent('₹ '+priceVal)}`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,'_blank');
+    }
+
+    function submitQuickEmail(){
+      const name = document.getElementById('bf_name').value.trim();
+      const phone = document.getElementById('bf_phone').value.trim();
+      const destText = document.getElementById('bf_destination').selectedOptions[0]?.text || '';
+      const date = document.getElementById('bf_date').value || 'Flexible';
+      const vehicle = document.getElementById('bf_vehicle').value;
+      const pax = document.getElementById('bf_pax').value || '1';
+      if(!name || !phone){ alert('Please fill name and phone.'); return; }
+      const body = [
+        'Name: ' + name,
+        'Phone: ' + phone,
+        'From: Nashik',
+        'To: ' + destText,
+        'Date: ' + date,
+        'Passengers: ' + pax,
+        'Vehicle: ' + vehicle
+      ].join('\\n');
+      window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent('Quick booking request')}&body=${encodeURIComponent(body)}`;
+    }
+
+    // helper escape
+    function escapeHtml(text){ return (text+'').replace(/[&<>"]/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]; }); }
+
+    // initialize price display
+    updatePrice();
+
+  </script>
 </body>
 </html>
+
