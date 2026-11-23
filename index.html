@@ -1,537 +1,1116 @@
 <!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <title>
-   Saarthi Tours &amp; Travels Nashik — Safe &amp; Affordable Cab Service
-  </title>
-  <meta content="Saarthi Tours &amp; Travels — Nashik based cab &amp; tour service. Airport pickups, local rides, outstation cabs to Shirdi, Mumbai, Pune and more. Call/WhatsApp 8177940572." name="description"/>
-  <meta content="Nashik cab service, Nashik taxi, Shirdi taxi, airport pickup Nashik, Saarthi tours" name="keywords"/>
-  <!-- If Google Search Console provides a verification meta tag paste it here:
-  <meta name="google-site-verification" content="YOUR_CODE_HERE" /> -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   :root{
-      --accent:#0b6df0; --muted:#6b7280; --white:#ffffff;
-      --call-green:#10b981; --wa-green:#25D366;
-      --card-bg: rgba(255,255,255,0.98);
-    }
-    *{box-sizing:border-box;font-family:'Poppins',system-ui,Arial,sans-serif}
-    html,body{height:100%;margin:0}
-    body{
-      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      color:#0b1220;
-    }
-    /* overlay for readability */
-    .page-overlay{min-height:100vh;background:linear-gradient(rgba(3,7,18,0.45),rgba(3,7,18,0.45));padding-bottom:40px}
-    .container{max-width:1150px;margin:0 auto;padding:20px}
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthi Tours & Travels - Nashik Cab Service & Outstation Taxi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            400: '#ffca28',
+                            500: '#ffb800', // Mansi Cab Signature Yellow
+                            600: '#e6a100',
+                            700: '#b88100',
+                            800: '#8f6300',
+                            900: '#664700',
+                        },
+                        dark: {
+                            800: '#1f2937',
+                            900: '#111827',
+                            950: '#0b0f17'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-btn.active {
+            background-color: #ffb800 !important;
+            color: #111827 !important;
+            font-weight: 800 !important;
+            box-shadow: 0 4px 12px rgba(255, 184, 0, 0.3);
+        }
+        .bounce-subtle {
+            animation: bounceSubtle 2s infinite;
+        }
+        @keyframes bounceSubtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand-500 selection:text-black">
 
-    /* header */
-    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;position:sticky;top:0;z-index:50;background:linear-gradient(0deg, rgba(3,7,18,0.6), rgba(3,7,18,0.2));backdrop-filter: blur(4px)}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:56px;width:56px;object-fit:contain;border-radius:8px;border:2px solid rgba(255,255,255,0.12)}
-    .brand .title{color:#fff;font-weight:700}
-    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:16px;font-weight:600;font-size:14px}
-    nav a:hover{color:var(--accent)}
-
-    /* hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
-    .hero h1{color:#fff;font-size:30px;margin:0 0 8px}
-    .hero p{color:rgba(230,238,252,0.9);margin:0 0 12px}
-    .hero .cta{display:flex;gap:12px;align-items:center}
-    .btn{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
-    .btn.secondary{background:#10b981}
-
-    /* card */
-    .card{background:var(--card-bg);border-radius:12px;padding:16px;box-shadow:0 12px 30px rgba(2,6,23,0.12)}
-    label{display:block;margin:8px 0 6px;font-size:13px;color:var(--muted)}
-    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px}
-    .row{display:flex;gap:10px}
-    .row .col{flex:1}
-
-    /* sections */
-    main{padding-top:20px}
-    .section-title{font-size:20px;margin-bottom:12px;color:#fff}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .service{background:rgba(255,255,255,0.95);padding:12px;border-radius:10px;text-align:center;color:#0b1220}
-    .service img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-
-    .routes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .route{background:rgba(255,255,255,0.95);padding:12px;border-radius:10px;color:#0b1220}
-
-    .fare-table{background:rgba(255,255,255,0.98);padding:12px;border-radius:10px;display:flex;gap:12px;align-items:center;justify-content:space-between;color:#0b1220}
-
-    /* pro sections */
-    .why-us, .gallery, .testimonials, .faq {background: rgba(255,255,255,0.02);padding:18px;border-radius:12px;margin-bottom:18px;color:rgba(255,255,255,0.95)}
-    .why-list{display:flex;gap:12px;flex-wrap:wrap}
-    .why-item{background:rgba(255,255,255,0.06);padding:12px;border-radius:10px;min-width:200px}
-
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
-    .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-
-    .test-card{background:rgba(255,255,255,0.95);padding:12px;border-radius:10px;color:#0b1220}
-
-    /* popup form */
-    .popup-form{display:none;position:fixed;z-index:1200;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.6)}
-    .popup-inner{background:#fff;color:#000;margin:8% auto;padding:18px;border-radius:12px;width:90%;max-width:420px;box-shadow:0 14px 40px rgba(2,6,23,0.2)}
-    .close-x{float:right;font-size:20px;cursor:pointer}
-
-    /* floating buttons */
-    .floating{position:fixed;z-index:1300;padding:12px 14px;border-radius:999px;color:#fff;font-weight:800;cursor:pointer;box-shadow:0 10px 30px rgba(2,6,23,0.18);transition:transform .2s}
-    .floating.call{left:14px;bottom:18px;background:var(--call-green)}
-    .floating.wa{right:14px;bottom:18px;background:var(--wa-green)}
-    @keyframes gentle {
-      0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}
-    }
-    .floating{animation: gentle 2.6s infinite}
-
-    footer{padding:18px 0;color:rgba(255,255,255,0.9);text-align:center}
-
-    /* responsive */
-    @media (max-width:1000px){
-      .hero{grid-template-columns:1fr}
-      .services-grid{grid-template-columns:repeat(2,1fr)}
-      .routes-grid{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:620px){
-      .brand img{height:48px;width:48px}
-      nav a{display:none}
-      .services-grid{grid-template-columns:1fr}
-      .routes-grid{grid-template-columns:1fr}
-    }
-
-    .muted{color:var(--muted);font-size:13px}
-  </style>
-  <!-- LocalBusiness structured data for SEO -->
-  <script type="application/ld+json">
-   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Saarthi Tours & Travels",
-    "image": "https://your-site.example/sarthi-tour-travel.png",
-    "telephone": "+918177940572",
-    "email": "jayashreegaware8@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Nashik",
-      "addressRegion": "Maharashtra",
-      "addressCountry": "IN"
-    },
-    "url": "https://your-github-or-domain-url.example",
-    "priceRange": "₹12/km"
-  }
-  </script>
-  <link href="https://saarthitours.in/" rel="canonical"/>
-  <meta content="Saarthi Tours &amp; Travels Nashik — Safe &amp; Affordable Cab Service" property="og:title"/>
-  <meta content="Book reliable cabs from Nashik to Shirdi, Mumbai, Pune &amp; more. Saarthi Tours &amp; Travels offers safe, affordable, and professional rides." property="og:description"/>
-  <meta content="https://saarthitours.in/saarthi-tour-travel.png" property="og:image"/>
-  <meta content="https://saarthitours.in/" property="og:url"/>
-  <meta content="summary_large_image" property="twitter:card"/>
- </head>
- <body>
-  <div class="page-overlay">
-   <div class="container">
-    <header>
-     <div class="brand">
-      <img alt="Saarthi Logo" onerror="this.style.display='none'" src="sarthi tour travel.png"/>
-      <div>
-       <div class="title">
-        Saarthi Tours &amp; Travels
-       </div>
-       <div class="muted" style="color:rgba(255,255,255,0.85);font-size:12px">
-        Safe &amp; Affordable Cab Service in Nashik
-       </div>
-      </div>
-     </div>
-     <nav aria-label="Main navigation">
-      <a href="#services">
-       Services
-      </a>
-      <a href="#routes">
-       Routes
-      </a>
-      <a href="#fares">
-       Rates
-      </a>
-      <a href="#why">
-       Why Us
-      </a>
-      <a href="#contact">
-       Contact
-      </a>
-     </nav>
-    </header>
-    <!-- HERO -->
-    <section class="hero" id="top">
-     <p>
-      🚖 Trusted by hundreds of travellers across Nashik &amp; Maharashtra.
-     </p>
-     <div>
-      <h1>
-       Safe &amp; Affordable Cab Service in Nashik
-      </h1>
-      <p>
-       Private cabs, airport pickup, family trips &amp; outstation journeys — reliable drivers and transparent rates.
-      </p>
-      <div class="cta">
-       <button class="btn" onclick="openPopup()">
-        Book Now
-       </button>
-       <button class="btn secondary" onclick="openQuote()">
-        Get Price Quote
-       </button>
-      </div>
-     </div>
-     <!-- quick card -->
-    </section>
-    <!-- Services -->
-    <main>
-     <section id="services" style="margin-bottom:18px">
-      <h2 class="section-title">
-       Our Services
-      </h2>
-      <div class="services-grid">
-       <div class="service">
-        <img alt="Local Rides" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
-        <h4>
-         Local City Rides
-        </h4>
-        <p class="muted">
-         Hourly or point-to-point rides within Nashik.
-        </p>
-       </div>
-       <div class="service">
-        <img alt="Outstation" src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
-        <h4>
-         Outstation Cabs
-        </h4>
-        <p class="muted">
-         Comfortable one-way &amp; round-trip journeys.
-        </p>
-       </div>
-      </div>
-     </section>
-     <!-- Popular Routes -->
-     <section id="routes" style="margin-bottom:18px">
-      <h2 class="section-title">
-       Popular Routes (From Nashik)
-      </h2>
-      <div class="routes-grid" id="routesGrid">
-      </div>
-      <div class="muted" style="margin-top:10px">
-       Don't see your route? Type any destination in the booking popup — we cover most Maharashtra routes and beyond.
-      </div>
-     </section>
-     <!-- Rates / Car categories -->
-     <section id="fares" style="margin-bottom:18px">
-      <h2 class="section-title">
-       Cab Categories &amp; Rates
-      </h2>
-      <div style="display:grid;gap:10px">
-       <div class="fare-table">
-        <div>
-         <strong>
-          4-Seater (Sedan)
-         </strong>
-         <div class="muted">
-          Comfortable up to 4 passengers
-         </div>
+    <!-- 1. Top Yellow Notification / Contact Bar -->
+    <div class="bg-brand-500 text-dark-900 text-xs py-2 px-4 font-semibold border-b border-brand-600">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center flex-wrap justify-center gap-4">
+                <a href="tel:9209054314" class="hover:underline flex items-center gap-1.5"><i class="fa-solid fa-phone"></i> +91 9209054314</a>
+                <span class="hidden md:inline">|</span>
+                <a href="mailto:jayashreegaware8@gmail.com" class="hover:underline flex items-center gap-1.5"><i class="fa-solid fa-envelope"></i> jayashreegaware8@gmail.com</a>
+                <span class="hidden md:inline">|</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot"></i> Hub: Nashik, Maharashtra</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-dark-900 text-brand-400 px-2.5 py-0.5 rounded-full text-[10px] font-bold">★ 4.9 Rated (Google & JustDial)</span>
+                <a href="tel:9209054314" class="bg-dark-900 hover:bg-black text-white px-3 py-1 rounded text-[11px] font-bold transition">Call Now</a>
+            </div>
         </div>
-        <div style="text-align:right">
-         <strong style="font-size:20px">
-          ₹12/km
-         </strong>
-         <div class="muted">
-          Starting
-         </div>
-        </div>
-       </div>
-       <div class="fare-table">
-        <div>
-         <strong>
-          6-Seater (SUV)
-         </strong>
-         <div class="muted">
-          Family groups
-         </div>
-        </div>
-        <div style="text-align:right">
-         <strong style="font-size:20px">
-          ₹15/km
-         </strong>
-         <div class="muted">
-          Starting
-         </div>
-        </div>
-       </div>
-       <div class="fare-table">
-        <div>
-         <strong>
-          7-Seater / Traveller
-         </strong>
-         <div class="muted">
-          Large groups &amp; luggage
-         </div>
-        </div>
-        <div style="text-align:right">
-         <strong style="font-size:20px">
-          ₹20/km
-         </strong>
-         <div class="muted">
-          Starting
-         </div>
-        </div>
-       </div>
-      </div>
-     </section>
-     <!-- Why choose us -->
-     <section class="why-us" id="why" style="margin-bottom:18px">
-      <h2 class="section-title">
-       Why Choose Saarthi
-      </h2>
-      <div class="why-list">
-       <div class="why-item">
-        ✅ Clean &amp; sanitized vehicles
-       </div>
-       <div class="why-item">
-        👨‍✈️ Experienced drivers
-       </div>
-       <div class="why-item">
-        ⏱️ On-time pickups
-       </div>
-       <div class="why-item">
-        💳 Transparent pricing
-       </div>
-       <div class="why-item">
-        📞 24/7 support via WhatsApp
-       </div>
-      </div>
-     </section>
-     <!-- Gallery -->
-     <section class="gallery" style="margin-bottom:18px">
-      <h2 class="section-title">
-       Fleet &amp; Trips
-      </h2>
-      <div class="gallery-grid">
-       <img alt="Fleet 1" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
-       <img alt="Trip" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
-       <img alt="Driver" src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
-      </div>
-     </section>
-     <!-- Testimonials -->
-     <!-- FAQ -->
-     <section class="faq" style="margin-bottom:18px">
-      <h2 class="section-title">
-       Frequently Asked Questions
-      </h2>
-      <div style="display:grid;gap:8px;color:rgba(255,255,255,0.95)">
-       <details>
-        <summary>
-         <strong>
-          How do I book?
-         </strong>
-        </summary>
-        <div class="muted" style="padding-top:8px">
-         Click "Book Now" or "Get Price Quote", fill the short form, or message us on WhatsApp at 8177940572.
-        </div>
-       </details>
-       <details>
-        <summary>
-         <strong>
-          What are the rates?
-         </strong>
-        </summary>
-        <div class="muted" style="padding-top:8px">
-         Rates start at ₹12/km for 4-seater, ₹15/km for 6-seater and ₹20/km for 7-seater. Final fare depends on distance &amp; vehicle.
-        </div>
-       </details>
-       <details>
-        <summary>
-         <strong>
-          Do you provide airport pickup?
-         </strong>
-        </summary>
-        <div class="muted" style="padding-top:8px">
-         Yes — we provide airport pickup/drop with flight tracking and meet &amp; greet.
-        </div>
-       </details>
-      </div>
-     </section>
-     <!-- Contact + Map -->
-     <section id="contact" style="margin-bottom:18px">
-      <h2 class="section-title">
-       Contact &amp; Location
-      </h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-       <div class="card">
-        <p class="muted">
-         Phone / WhatsApp
-        </p>
-        <a href="https://wa.me/918177940572" style="color:var(--accent);font-weight:700;text-decoration:none">
-         +91 81779 40572
-        </a>
-        <p class="muted" style="margin-top:8px">
-         Email
-        </p>
-        <a href="mailto:jayashreegaware8@gmail.com" style="color:var(--accent);text-decoration:none">
-         jayashreegaware8@gmail.com
-        </a>
-        <p class="muted" style="margin-top:8px">
-         Office: Nashik, Maharashtra
-        </p>
-       </div>
-       <div class="card">
-        <div style="width:100%;height:220px;border-radius:8px;overflow:hidden">
-         <iframe allowfullscreen="" height="100%" loading="lazy" src="https://www.google.com/maps?q=Nashik&amp;output=embed" style="border:0;" width="100%">
-         </iframe>
-        </div>
-       </div>
-      </div>
-     </section>
-     <div style="text-align:center;color:#fff;margin:18px 0;font-weight:600;">
-      Book reliable cabs from Nashik to Shirdi, Mumbai, Pune &amp; more — Saarthi Tours &amp; Travels.
-     </div>
-     <footer>
-      <div>
-       © 2025 Saarthi Tours &amp; Travels — Serving Nashik &amp; Maharashtra
-      </div>
-     </footer>
-    </main>
-   </div>
-   <!-- container -->
-  </div>
-  <!-- overlay -->
-  <!-- Popup booking form (short) -->
-  <div aria-hidden="true" class="popup-form" id="popup" role="dialog">
-   <div class="popup-inner" role="document">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-     <strong>
-      Quick Booking
-     </strong>
-     <span class="close-x" onclick="closePopup()">
-      ✕
-     </span>
     </div>
-    <form id="popupForm">
-     <input id="p_pickup" placeholder="Pickup location (e.g., Nashik station)" required="" type="text"/>
-     <input id="p_drop" placeholder="Destination (any location)" required="" type="text"/>
-     <select id="p_vehicle" required="">
-      <option value="">
-       Select vehicle
-      </option>
-      <option value="sedan">
-       4-Seater (₹12/km)
-      </option>
-      <option value="suv">
-       6-Seater (₹15/km)
-      </option>
-      <option value="tempo">
-       7-Seater (₹20/km)
-      </option>
-     </select>
-     <input id="p_phone" placeholder="Mobile number (required)" required="" type="tel"/>
-     <div style="display:flex;gap:8px;margin-top:10px">
-      <button class="btn" type="submit">
-       Send via WhatsApp
-      </button>
-      <button class="btn secondary" onclick="closePopup()" type="button">
-       Cancel
-      </button>
-     </div>
-     <p id="p_msg" style="display:none;color:green;margin-top:8px">
-      Thank you! We'll contact you soon.
-     </p>
-    </form>
-   </div>
-  </div>
-  <!-- Floating buttons -->
-  <div class="floating call" onclick="callNow()" title="Call Now">
-   📞 Call
-  </div>
-  <div class="floating wa" onclick="openWhatsApp()" title="Chat on WhatsApp">
-   💬 WhatsApp
-  </div>
-  <script>
-   // config
-    const WHATSAPP_NUMBER = '918177940572'; // no +, used in wa.me
-    const PHONE_TEL = '8177940572';
-    const EMAIL = 'jayashreegaware8@gmail.com';
 
-    // routes data populate
-    const routes = [
-      {name:'Mumbai',km:180},{name:'Shirdi',km:110},{name:'Mahabaleshwar',km:240},{name:'Pune',km:200},
-      {name:'Lonavala',km:210},{name:'Aurangabad',km:160},{name:'Trimbakeshwar',km:35},{name:'Igatpuri',km:75},
-      {name:'Bhandardara',km:90},{name:'Solapur',km:360},{name:'Tuljapur',km:330},{name:'Goa',km:810},
-      {name:'Kolhapur',km:500},{name:'Surat',km:400},{name:'Nagpur',km:750},{name:'Dhule',km:160}
-    ];
-    const rates = {sedan:12, suv:15, tempo:20};
+    <!-- 2. Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-brand-500 rounded-xl flex items-center justify-center text-dark-900 font-black text-2xl shadow-lg shadow-brand-500/30">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-black text-dark-900 tracking-tight block">SARTHI <span class="text-brand-500">TOURS</span></span>
+                        <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest block -mt-1">& Travels • Nashik</span>
+                    </div>
+                </a>
 
-    // populate routes grid
-    const grid = document.getElementById('routesGrid');
-    routes.forEach(r=>{
-      const card = document.createElement('div');
-      card.className='route';
-      card.innerHTML = `<strong>${r.name}</strong><div class="muted" style="margin-top:6px">Approx ${r.km} km</div>
-        <div style="margin-top:8px;display:flex;gap:8px"><button class="btn" onclick="selectRoute('${r.name}',${r.km})">Get Price Quote</button>
-        <button class="btn secondary" onclick="selectRoute('${r.name}',${r.km});openWhatsApp()">Contact</button></div>`;
-      grid.appendChild(card);
-    });
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6 font-semibold text-sm">
+                    <a href="#booking" class="text-brand-600 hover:text-brand-500 transition">Home</a>
+                    <a href="#tariff" class="text-gray-700 hover:text-brand-500 transition">Tariff & Rates</a>
+                    <a href="#packages" class="text-gray-700 hover:text-brand-500 transition">Tour Packages</a>
+                    <a href="#routes" class="text-gray-700 hover:text-brand-500 transition">Popular Routes</a>
+                    <a href="#offers" class="text-gray-700 hover:text-brand-500 transition">Offers</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-brand-500 transition">Reviews</a>
+                </nav>
 
-    function computePrice(km,vehicle,pax=1){
-      if(!km || km<=0) return 0;
-      const rate = vehicle==='suv'?rates.suv:(vehicle==='tempo'?rates.tempo:rates.sedan);
-      let base = km * rate;
-      if(pax>4 && vehicle!=='tempo') base += (pax-4)*150;
-      return Math.round(base);
-    }
-    // estimate update for quick panel
-    function updateEstimate(){
-      const km = parseFloat(document.getElementById('distance')?.value || 0);
-      const vehicle = document.getElementById('vehicle')?.value || 'sedan';
-      const pax = parseInt(document.getElementById('pax')?.value || 1);
-      if(km>0){ document.getElementById('price').innerText = `₹ ${computePrice(km,vehicle,pax)} (Est.)`; }
-      else document.getElementById('price').innerText = '— (enter km)';
-    }
-    // attach if exists
-    try{ document.getElementById('distance')?.addEventListener('input', updateEstimate); document.getElementById('vehicle')?.addEventListener('change', updateEstimate); }catch(e){}
+                <!-- CTA Button & Mobile Menu Toggle -->
+                <div class="flex items-center space-x-3">
+                    <a href="tel:9209054314" class="hidden sm:inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-dark-900 px-4 py-2.5 rounded-xl font-extrabold text-sm transition shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Book Cab: 9209054314</span>
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden text-dark-900 p-2 text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-    // popup open/close
-    function openPopup(){ document.getElementById('popup').style.display='block'; document.getElementById('popup').setAttribute('aria-hidden','false'); }
-    function closePopup(){ document.getElementById('popup').style.display='none'; document.getElementById('popup').setAttribute('aria-hidden','true'); }
-    // quick open (get price)
-    function openQuote(){ openPopup(); document.getElementById('p_msg').style.display='none'; }
-    function openQuoteForm(){ openPopup(); } // used by quick card
-    function selectRoute(name,estKm){
-      // prefill popup fields
-      openPopup();
-      document.getElementById('p_drop').value = name;
-      document.getElementById('p_pickup').value = 'Nashik';
-    }
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#booking" onclick="closeMobileMenu()" class="block py-2 text-brand-600 font-bold border-b border-gray-100">Home</a>
+            <a href="#tariff" onclick="closeMobileMenu()" class="block py-2 text-gray-700 font-semibold border-b border-gray-100">Tariff & Rates</a>
+            <a href="#packages" onclick="closeMobileMenu()" class="block py-2 text-gray-700 font-semibold border-b border-gray-100">Tour Packages</a>
+            <a href="#routes" onclick="closeMobileMenu()" class="block py-2 text-gray-700 font-semibold border-b border-gray-100">Popular Routes</a>
+            <a href="#offers" onclick="closeMobileMenu()" class="block py-2 text-gray-700 font-semibold border-b border-gray-100">Offers</a>
+            <a href="#reviews" onclick="closeMobileMenu()" class="block py-2 text-gray-700 font-semibold border-b border-gray-100">Reviews</a>
+            <a href="tel:9209054314" class="flex items-center justify-center gap-2 bg-brand-500 text-dark-900 py-3 rounded-xl font-black mt-3">
+                <i class="fa-solid fa-phone"></i> Call +91 9209054314
+            </a>
+        </div>
+    </header>
 
-    // popup form submit => open WhatsApp with prefilled message
-    document.getElementById('popupForm')?.addEventListener('submit', function(e){
-      e.preventDefault();
-      const pickup = encodeURIComponent(document.getElementById('p_pickup').value.trim() || 'Nashik');
-      const drop = encodeURIComponent(document.getElementById('p_drop').value.trim());
-      const vehicle = encodeURIComponent(document.getElementById('p_vehicle').value);
-      const phone = encodeURIComponent(document.getElementById('p_phone').value.trim());
-      if(!drop || !phone){ alert('Please enter destination and mobile number.'); return; }
-      const msg = `Hello Saarthi Tours, I want a booking.%0AFrom: ${pickup}%0ATo: ${drop}%0AVehicle: ${vehicle}%0APhone: ${phone}`;
-      // show inline thank you
-      document.getElementById('p_msg').style.display='block';
-      // open WhatsApp
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,'_blank');
-      setTimeout(()=>{ closePopup(); }, 2500);
-    });
+    <!-- 3. Hero Section with Exact Booking Box -->
+    <section id="booking" class="relative bg-gradient-to-br from-dark-950 via-dark-900 to-slate-900 text-white pt-10 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffb800_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
-    // floating actions
-    function openWhatsApp(){ window.open(`https://wa.me/${WHATSAPP_NUMBER}`,'_blank'); }
-    function callNow(){ window.location.href = `tel:${PHONE_TEL}`; }
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="bg-brand-500/20 text-brand-400 border border-brand-500/30 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest inline-block mb-3">
+                    Nashik's Premier Cab & Taxi Service
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-3 leading-tight">
+                    Reliable Cabs for <span class="text-brand-500">Outstation, Local & Airport</span> Rides
+                </h1>
+                <p class="text-gray-300 text-sm sm:text-base font-medium">
+                    Sanitised Cabs • Trained Drivers • Lowest Fare Guaranteed • Instant WhatsApp Booking
+                </p>
+            </div>
 
-    // small helper for older browsers safety
-    if(!document.getElementById('popupForm')){ /* no-op */ }
-  </script>
- </body>
+            <!-- Booking Box Card -->
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl text-gray-800 p-4 sm:p-6 lg:p-8 border border-gray-100">
+                <!-- Trip Category Tabs -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6 bg-gray-100 p-1.5 rounded-2xl">
+                    <button type="button" onclick="switchTab('oneway')" id="tab-oneway" class="tab-btn active py-3 px-2 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 text-gray-700 transition-all">
+                        <i class="fa-solid fa-arrow-right-long"></i> One Way
+                    </button>
+                    <button type="button" onclick="switchTab('local')" id="tab-local" class="tab-btn py-3 px-2 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 text-gray-700 transition-all">
+                        <i class="fa-solid fa-city"></i> Local Rental
+                    </button>
+                    <button type="button" onclick="switchTab('roundtrip')" id="tab-roundtrip" class="tab-btn py-3 px-2 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 text-gray-700 transition-all">
+                        <i class="fa-solid fa-arrows-rotate"></i> Round Trip
+                    </button>
+                    <button type="button" onclick="switchTab('airport')" id="tab-airport" class="tab-btn py-3 px-2 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 text-gray-700 transition-all">
+                        <i class="fa-solid fa-plane-departure"></i> Airport
+                    </button>
+                </div>
+
+                <!-- Interactive Search Form -->
+                <form id="heroBookingForm" onsubmit="handleSearchCabs(event)">
+                    
+                    <!-- Dynamic Input Grid -->
+                    <div id="formGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
+                        
+                        <!-- Pickup Field -->
+                        <div class="relative" id="field-pickup">
+                            <label class="block text-xs font-extrabold text-gray-700 uppercase mb-1">Pickup City / Address</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-location-dot absolute left-3.5 top-3.5 text-brand-600"></i>
+                                <input type="text" id="pickupInput" required placeholder="e.g. Nashik" value="Nashik" class="w-full pl-9 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm font-bold text-dark-900 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Drop Field -->
+                        <div class="relative" id="field-drop">
+                            <label class="block text-xs font-extrabold text-gray-700 uppercase mb-1">Drop City / Destination</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-location-crosshairs absolute left-3.5 top-3.5 text-red-500"></i>
+                                <input type="text" id="dropInput" required placeholder="e.g. Mumbai / Pune" class="w-full pl-9 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm font-bold text-dark-900 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Local Rental Package Field -->
+                        <div class="relative hidden" id="field-package">
+                            <label class="block text-xs font-extrabold text-gray-700 uppercase mb-1">Rental Package</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-clock absolute left-3.5 top-3.5 text-brand-600"></i>
+                                <select id="packageInput" class="w-full pl-9 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm font-bold text-dark-900 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                    <option value="8 Hrs / 80 Kms">8 Hrs / 80 Kms (Standard)</option>
+                                    <option value="12 Hrs / 120 Kms">12 Hrs / 120 Kms (Full Day)</option>
+                                    <option value="4 Hrs / 40 Kms">4 Hrs / 40 Kms (Half Day)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Airport Type Field -->
+                        <div class="relative hidden" id="field-airport-type">
+                            <label class="block text-xs font-extrabold text-gray-700 uppercase mb-1">Transfer Type</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-plane-circle-check absolute left-3.5 top-3.5 text-brand-600"></i>
+                                <select id="airportTypeInput" class="w-full pl-9 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm font-bold text-dark-900 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                                    <option value="Drop to Airport">Drop to Airport</option>
+                                    <option value="Pickup from Airport">Pickup from Airport</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Departure Date -->
+                        <div class="relative" id="field-date">
+                            <label class="block text-xs font-extrabold text-gray-700 uppercase mb-1">Departure Date</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-calendar-days absolute left-3.5 top-3.5 text-gray-500"></i>
+                                <input type="date" id="dateInput" required class="w-full pl-9 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm font-bold text-dark-900 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Departure Time -->
+                        <div class="relative" id="field-time">
+                            <label class="block text-xs font-extrabold text-gray-700 uppercase mb-1">Pickup Time</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-clock absolute left-3.5 top-3.5 text-gray-500"></i>
+                                <input type="time" id="timeInput" required value="09:00" class="w-full pl-9 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm font-bold text-dark-900 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- Return Date (Only for Round Trip) -->
+                        <div class="relative hidden" id="field-return-date">
+                            <label class="block text-xs font-extrabold text-brand-800 uppercase mb-1">Return Date</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-calendar-check absolute left-3.5 top-3.5 text-brand-600"></i>
+                                <input type="date" id="returnDateInput" class="w-full pl-9 pr-3 py-2.5 bg-brand-50 border border-brand-300 rounded-xl text-sm font-bold text-dark-900 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-black py-4 rounded-xl text-base shadow-lg shadow-brand-500/30 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-magnifying-glass"></i> SEARCH CABS & CHECK RATES
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Offers & Discount Banners (Mansi Cab Style) -->
+    <section id="offers" class="py-10 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Best Savings</span>
+                <h2 class="text-2xl font-black text-dark-900">Exclusive Travel Discounts</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                
+                <!-- Offer 1 -->
+                <div class="bg-gradient-to-br from-amber-500 to-brand-500 p-5 rounded-2xl text-dark-900 shadow-md flex items-center justify-between border border-yellow-400">
+                    <div>
+                        <span class="bg-black text-white px-2 py-0.5 rounded text-[10px] font-extrabold uppercase">ONE-WAY TRIPS</span>
+                        <h3 class="text-lg font-black mt-2">FLAT ₹250 OFF</h3>
+                        <p class="text-xs font-semibold opacity-90">On all intercity rides</p>
+                    </div>
+                    <div class="text-3xl text-dark-900 opacity-80"><i class="fa-solid fa-tags"></i></div>
+                </div>
+
+                <!-- Offer 2 -->
+                <div class="bg-gradient-to-br from-dark-900 to-slate-800 p-5 rounded-2xl text-white shadow-md flex items-center justify-between border border-dark-800">
+                    <div>
+                        <span class="bg-brand-500 text-black px-2 py-0.5 rounded text-[10px] font-extrabold uppercase">ROUND TRIP</span>
+                        <h3 class="text-lg font-black mt-2">UP TO ₹500 OFF</h3>
+                        <p class="text-xs text-gray-300">Outstation vacations</p>
+                    </div>
+                    <div class="text-3xl text-brand-400"><i class="fa-solid fa-car-side"></i></div>
+                </div>
+
+                <!-- Offer 3 -->
+                <div class="bg-gradient-to-br from-blue-700 to-indigo-800 p-5 rounded-2xl text-white shadow-md flex items-center justify-between border border-blue-600">
+                    <div>
+                        <span class="bg-white/20 text-white px-2 py-0.5 rounded text-[10px] font-extrabold uppercase">AIRPORT SPECIAL</span>
+                        <h3 class="text-lg font-black mt-2">UP TO ₹400 OFF</h3>
+                        <p class="text-xs text-blue-100">Mumbai / Pune Airport</p>
+                    </div>
+                    <div class="text-3xl text-white opacity-80"><i class="fa-solid fa-plane"></i></div>
+                </div>
+
+                <!-- Offer 4 -->
+                <div class="bg-gradient-to-br from-emerald-600 to-teal-700 p-5 rounded-2xl text-white shadow-md flex items-center justify-between border border-emerald-500">
+                    <div>
+                        <span class="bg-white/20 text-white px-2 py-0.5 rounded text-[10px] font-extrabold uppercase">LOCAL RENTAL</span>
+                        <h3 class="text-lg font-black mt-2">FLAT ₹150 OFF</h3>
+                        <p class="text-xs text-emerald-100">Sightseeing & Shopping</p>
+                    </div>
+                    <div class="text-3xl text-white opacity-80"><i class="fa-solid fa-clock"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Taxi Rates & Fare Chart Section -->
+    <section id="tariff" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Transparent Rates</span>
+                <h2 class="text-3xl font-black text-dark-900 mt-1">Sarthi Taxi Rate & Tariff Chart</h2>
+                <p class="text-gray-600 text-sm mt-2">No hidden charges. Clear per-KM rates and daily allowances.</p>
+            </div>
+
+            <!-- Rate Table -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-gray-700">
+                        <thead class="bg-dark-900 text-white uppercase text-xs font-extrabold">
+                            <tr>
+                                <th class="p-4">Vehicle Type</th>
+                                <th class="p-4">Models Offered</th>
+                                <th class="p-4">Seating</th>
+                                <th class="p-4">One Way Rate</th>
+                                <th class="p-4">Round Trip Rate</th>
+                                <th class="p-4 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 font-semibold">
+                            <tr class="hover:bg-amber-50/50 transition">
+                                <td class="p-4 font-black text-dark-900 flex items-center gap-2">
+                                    <i class="fa-solid fa-car text-brand-600"></i> Hatchback
+                                </td>
+                                <td class="p-4 text-gray-600">WagonR / Celerio</td>
+                                <td class="p-4">4 + 1 Seater</td>
+                                <td class="p-4 text-brand-700 font-bold">₹10 / KM</td>
+                                <td class="p-4 text-brand-700 font-bold">₹10 / KM</td>
+                                <td class="p-4 text-center">
+                                    <button onclick="selectCarAndBook('Hatchback (WagonR)', 10)" class="bg-brand-500 hover:bg-brand-600 text-dark-900 text-xs font-black px-3 py-2 rounded-lg transition">Select</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-amber-50/50 transition">
+                                <td class="p-4 font-black text-dark-900 flex items-center gap-2">
+                                    <i class="fa-solid fa-car-side text-brand-600"></i> Sedan
+                                </td>
+                                <td class="p-4 text-gray-600">Swift Dzire / Etios</td>
+                                <td class="p-4">4 + 1 Seater</td>
+                                <td class="p-4 text-brand-700 font-bold">₹11 / KM</td>
+                                <td class="p-4 text-brand-700 font-bold">₹11 / KM</td>
+                                <td class="p-4 text-center">
+                                    <button onclick="selectCarAndBook('Sedan (Dzire/Etios)', 11)" class="bg-brand-500 hover:bg-brand-600 text-dark-900 text-xs font-black px-3 py-2 rounded-lg transition">Select</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-amber-50/50 transition">
+                                <td class="p-4 font-black text-dark-900 flex items-center gap-2">
+                                    <i class="fa-solid fa-van-shuttle text-brand-600"></i> SUV Comfort
+                                </td>
+                                <td class="p-4 text-gray-600">Maruti Ertiga / Triber</td>
+                                <td class="p-4">6 + 1 Seater</td>
+                                <td class="p-4 text-brand-700 font-bold">₹14 / KM</td>
+                                <td class="p-4 text-brand-700 font-bold">₹13 / KM</td>
+                                <td class="p-4 text-center">
+                                    <button onclick="selectCarAndBook('SUV Ertiga', 14)" class="bg-brand-500 hover:bg-brand-600 text-dark-900 text-xs font-black px-3 py-2 rounded-lg transition">Select</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-amber-50/50 transition">
+                                <td class="p-4 font-black text-dark-900 flex items-center gap-2">
+                                    <i class="fa-solid fa-truck-monster text-brand-600"></i> Premium SUV
+                                </td>
+                                <td class="p-4 text-gray-600">Toyota Innova Crysta</td>
+                                <td class="p-4">7 + 1 Seater</td>
+                                <td class="p-4 text-brand-700 font-bold">₹18 / KM</td>
+                                <td class="p-4 text-brand-700 font-bold">₹17 / KM</td>
+                                <td class="p-4 text-center">
+                                    <button onclick="selectCarAndBook('Innova Crysta', 18)" class="bg-brand-500 hover:bg-brand-600 text-dark-900 text-xs font-black px-3 py-2 rounded-lg transition">Select</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-amber-50/50 transition">
+                                <td class="p-4 font-black text-dark-900 flex items-center gap-2">
+                                    <i class="fa-solid fa-bus text-brand-600"></i> Tempo Traveller
+                                </td>
+                                <td class="p-4 text-gray-600">Force Traveller Luxury</td>
+                                <td class="p-4">13 / 17 Seater</td>
+                                <td class="p-4 text-brand-700 font-bold">₹24 / KM</td>
+                                <td class="p-4 text-brand-700 font-bold">₹22 / KM</td>
+                                <td class="p-4 text-center">
+                                    <button onclick="selectCarAndBook('Tempo Traveller (17 Seater)', 24)" class="bg-brand-500 hover:bg-brand-600 text-dark-900 text-xs font-black px-3 py-2 rounded-lg transition">Select</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-3 text-center">* Note: Toll tax, state border permit, and parking charges payable as per actual receipts.</p>
+        </div>
+    </section>
+
+    <!-- 6. Tour Packages Section (Nashik & Maharashtra Special) -->
+    <section id="packages" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Special Sightseeing</span>
+                    <h2 class="text-3xl font-black text-dark-900 mt-1">Popular Nashik & Pilgrimage Packages</h2>
+                </div>
+                <a href="tel:9209054314" class="mt-3 md:mt-0 font-bold text-sm text-brand-600 hover:underline flex items-center gap-1.5">
+                    Custom Tour Plan? Call 9209054314 <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Package 1 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition bg-white flex flex-col justify-between">
+                    <div>
+                        <div class="bg-gradient-to-r from-amber-500 to-yellow-400 p-4 text-dark-900">
+                            <span class="bg-dark-900 text-white text-[10px] font-black px-2.5 py-1 rounded uppercase">Pilgrimage Special</span>
+                            <h3 class="text-xl font-black mt-2">Trimbakeshwar & Shirdi Sightseeing</h3>
+                            <p class="text-xs font-semibold opacity-90">1 Day Full Sightseeing</p>
+                        </div>
+                        <div class="p-6 text-xs text-gray-600 space-y-2">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Nashik Pickup ➔ Trimbakeshwar Jyotirlinga</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Panchavati & Muktidham Temple</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Shirdi Sai Baba Temple Darshan</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Clean AC Cab with Driver Included</div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] text-gray-500 block">Package Fare</span>
+                            <span class="text-2xl font-black text-brand-600">₹1,999</span>
+                        </div>
+                        <button onclick="quickBookPackage('Trimbakeshwar & Shirdi Package', 1999)" class="bg-dark-900 hover:bg-black text-white font-bold text-xs px-4 py-2.5 rounded-xl transition">Book Package</button>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition bg-white flex flex-col justify-between">
+                    <div>
+                        <div class="bg-gradient-to-r from-dark-900 to-slate-800 p-4 text-white">
+                            <span class="bg-brand-500 text-black text-[10px] font-black px-2.5 py-1 rounded uppercase">3 Days / 2 Nights</span>
+                            <h3 class="text-xl font-black mt-2 text-brand-400">Maharashtra Jyotirlinga Darshan</h3>
+                            <p class="text-xs text-gray-300">Bhimashankar • Trimbakeshwar • Grishneshwar</p>
+                        </div>
+                        <div class="p-6 text-xs text-gray-600 space-y-2">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 3 Sacred Jyotirlinga Temples Covered</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Ellora Caves Sightseeing</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Nashik / Pune Pickup & Drop</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Dedicated Sedan / SUV Cab</div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] text-gray-500 block">Starting from</span>
+                            <span class="text-2xl font-black text-brand-600">₹14,999</span>
+                        </div>
+                        <button onclick="quickBookPackage('3 Jyotirlinga Darshan Package', 14999)" class="bg-dark-900 hover:bg-black text-white font-bold text-xs px-4 py-2.5 rounded-xl transition">Book Package</button>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition bg-white flex flex-col justify-between">
+                    <div>
+                        <div class="bg-gradient-to-r from-amber-500 to-yellow-400 p-4 text-dark-900">
+                            <span class="bg-dark-900 text-white text-[10px] font-black px-2.5 py-1 rounded uppercase">2 Days Trip</span>
+                            <h3 class="text-xl font-black mt-2">Ashtavinayak Darshan Tour</h3>
+                            <p class="text-xs font-semibold opacity-90">Complete 8 Ganesha Temples</p>
+                        </div>
+                        <div class="p-6 text-xs text-gray-600 space-y-2">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Doorstep Pickup from Nashik</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Experienced Driver for Long Highway</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Flexible Sightseeing Stops</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Transparent Pricing</div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] text-gray-500 block">Starting from</span>
+                            <span class="text-2xl font-black text-brand-600">₹8,499</span>
+                        </div>
+                        <button onclick="quickBookPackage('Ashtavinayak Darshan Package', 8499)" class="bg-dark-900 hover:bg-black text-white font-bold text-xs px-4 py-2.5 rounded-xl transition">Book Package</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Popular Nashik Routes Section -->
+    <section id="routes" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brand-600 text-xs font-bold uppercase tracking-widest">Fixed Fare One-Way Cabs</span>
+                <h2 class="text-3xl font-black text-dark-900 mt-1">Popular Outstation Routes from Nashik</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                
+                <!-- Route Card 1 -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-200 hover:border-brand-500 shadow-sm transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-green-100 text-green-800 text-[10px] font-black px-2 py-0.5 rounded">ONE WAY</span>
+                            <span class="text-xs text-gray-500 font-bold">~170 Kms</span>
+                        </div>
+                        <h3 class="font-black text-lg text-dark-900">Nashik ➔ Mumbai / Airport</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Doorstep Pickup to T1/T2 Airport</p>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-1 mb-3">
+                            <span class="text-xs text-gray-500">Fixed Fare</span>
+                            <span class="text-xl font-black text-brand-600">₹2,499</span>
+                        </div>
+                        <button onclick="quickBookRoute('Nashik', 'Mumbai Airport')" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold py-2 rounded-xl text-xs transition">Book One Way</button>
+                    </div>
+                </div>
+
+                <!-- Route Card 2 -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-200 hover:border-brand-500 shadow-sm transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-green-100 text-green-800 text-[10px] font-black px-2 py-0.5 rounded">ONE WAY</span>
+                            <span class="text-xs text-gray-500 font-bold">~210 Kms</span>
+                        </div>
+                        <h3 class="font-black text-lg text-dark-900">Nashik ➔ Pune / Airport</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Via Sangamner Highway</p>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-1 mb-3">
+                            <span class="text-xs text-gray-500">Fixed Fare</span>
+                            <span class="text-xl font-black text-brand-600">₹2,820</span>
+                        </div>
+                        <button onclick="quickBookRoute('Nashik', 'Pune City/Airport')" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold py-2 rounded-xl text-xs transition">Book One Way</button>
+                    </div>
+                </div>
+
+                <!-- Route Card 3 -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-200 hover:border-brand-500 shadow-sm transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-[10px] font-black px-2 py-0.5 rounded">POPULAR</span>
+                            <span class="text-xs text-gray-500 font-bold">~90 Kms</span>
+                        </div>
+                        <h3 class="font-black text-lg text-dark-900">Nashik ➔ Shirdi</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Direct Temple Drop</p>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-1 mb-3">
+                            <span class="text-xs text-gray-500">Fixed Fare</span>
+                            <span class="text-xl font-black text-brand-600">₹1,800</span>
+                        </div>
+                        <button onclick="quickBookRoute('Nashik', 'Shirdi')" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold py-2 rounded-xl text-xs transition">Book One Way</button>
+                    </div>
+                </div>
+
+                <!-- Route Card 4 -->
+                <div class="bg-white p-5 rounded-2xl border border-gray-200 hover:border-brand-500 shadow-sm transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-0.5 rounded">HILL STATION</span>
+                            <span class="text-xs text-gray-500 font-bold">~80 Kms</span>
+                        </div>
+                        <h3 class="font-black text-lg text-dark-900">Nashik ➔ Saputara</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Cool Resort Trip</p>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline gap-1 mb-3">
+                            <span class="text-xs text-gray-500">Fixed Fare</span>
+                            <span class="text-xl font-black text-brand-600">₹1,950</span>
+                        </div>
+                        <button onclick="quickBookRoute('Nashik', 'Saputara')" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold py-2 rounded-xl text-xs transition">Book One Way</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Dedicated Popular City Services & Intercity Coverage -->
+    <section id="city-services" class="py-16 bg-white border-t border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-brand-500/20 text-brand-700 border border-brand-500/40 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-widest inline-block mb-2">
+                    Wide Coverage Network
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-dark-900">Popular City Services & Intercity Cab Hubs</h2>
+                <p class="text-gray-600 text-sm mt-2 font-medium">Reliable one-way cabs, round trips, and doorstep airport pickup/drop connecting Nashik with all major cities in Maharashtra and Gujarat.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- City 1: Mumbai & Thane -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:border-brand-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-dark-900 text-brand-400 rounded-xl flex items-center justify-center text-xl mb-4 shadow-sm">
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <h3 class="text-xl font-black text-dark-900">Nashik ➔ Mumbai & Thane</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Coverage: Dadar, Thane, Navi Mumbai, Borivali, CSMT & T1/T2 Airport.</p>
+                        <ul class="text-xs space-y-2 text-gray-700 font-semibold mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Express Highway Toll Rides</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Doorstep Pickup from Nashik</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> 24/7 Flight Pickup Service</li>
+                        </ul>
+                    </div>
+                    <button onclick="quickBookRoute('Nashik', 'Mumbai / Thane')" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold py-3 rounded-xl text-xs transition shadow-sm">
+                        Book Mumbai Cab
+                    </button>
+                </div>
+
+                <!-- City 2: Pune & PCMC -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:border-brand-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-dark-900 text-brand-400 rounded-xl flex items-center justify-center text-xl mb-4 shadow-sm">
+                            <i class="fa-solid fa-building-user"></i>
+                        </div>
+                        <h3 class="text-xl font-black text-dark-900">Nashik ➔ Pune & PCMC</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Coverage: Hinjewadi, Viman Nagar, Swargate, Chakan, Wakad & Pune Airport.</p>
+                        <ul class="text-xs space-y-2 text-gray-700 font-semibold mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Daily IT Corridor Travel</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> No Extra Driver Charge</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Sedan & Ertiga Options</li>
+                        </ul>
+                    </div>
+                    <button onclick="quickBookRoute('Nashik', 'Pune City / Hinjewadi')" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold py-3 rounded-xl text-xs transition shadow-sm">
+                        Book Pune Cab
+                    </button>
+                </div>
+
+                <!-- City 3: Chhatrapati Sambhajinagar (Aurangabad) -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:border-brand-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-dark-900 text-brand-400 rounded-xl flex items-center justify-center text-xl mb-4 shadow-sm">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <h3 class="text-xl font-black text-dark-900">Nashik ➔ Chh. Sambhajinagar</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Coverage: Aurangabad City, Grishneshwar, Ajanta-Ellora Caves & MIDC.</p>
+                        <ul class="text-xs space-y-2 text-gray-700 font-semibold mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Heritage Sightseeing Cabs</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Samruddhi Mahamarg Highway</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Comfortable Long Distance</li>
+                        </ul>
+                    </div>
+                    <button onclick="quickBookRoute('Nashik', 'Chhatrapati Sambhajinagar')" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold py-3 rounded-xl text-xs transition shadow-sm">
+                        Book Sambhajinagar Cab
+                    </button>
+                </div>
+
+                <!-- City 4: Surat & South Gujarat -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:border-brand-500 transition shadow-sm hover:shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-dark-900 text-brand-400 rounded-xl flex items-center justify-center text-xl mb-4 shadow-sm">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <h3 class="text-xl font-black text-dark-900">Nashik ➔ Surat & Vapi</h3>
+                        <p class="text-xs text-gray-500 mt-1 mb-4">Coverage: Surat Textile Market, Navsari, Valsad, Vapi & Silvassa.</p>
+                        <ul class="text-xs space-y-2 text-gray-700 font-semibold mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Interstate Permit Included</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Business Trip Specialists</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> On-time Drop Guarantee</li>
+                        </ul>
+                    </div>
+                    <button onclick="quickBookRoute('Nashik', 'Surat / Gujarat')" class="w-full bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold py-3 rounded-xl text-xs transition shadow-sm">
+                        Book Surat Cab
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Additional Popular Cities Quick Links Grid -->
+            <div class="mt-10 bg-dark-900 rounded-2xl p-6 text-white border border-dark-800">
+                <h4 class="text-lg font-black text-brand-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-map-location-dot"></i> More Popular Intercity Taxi Routes From Nashik:
+                </h4>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs font-bold">
+                    <button onclick="quickBookRoute('Nashik', 'Shirdi')" class="bg-dark-800 hover:bg-brand-500 hover:text-dark-900 p-2.5 rounded-xl border border-gray-700 transition text-left">
+                        ➔ Nashik to Shirdi
+                    </button>
+                    <button onclick="quickBookRoute('Nashik', 'Trimbakeshwar')" class="bg-dark-800 hover:bg-brand-500 hover:text-dark-900 p-2.5 rounded-xl border border-gray-700 transition text-left">
+                        ➔ Nashik to Trimbakeshwar
+                    </button>
+                    <button onclick="quickBookRoute('Nashik', 'Saputara')" class="bg-dark-800 hover:bg-brand-500 hover:text-dark-900 p-2.5 rounded-xl border border-gray-700 transition text-left">
+                        ➔ Nashik to Saputara
+                    </button>
+                    <button onclick="quickBookRoute('Nashik', 'Dhule / Jalgaon')" class="bg-dark-800 hover:bg-brand-500 hover:text-dark-900 p-2.5 rounded-xl border border-gray-700 transition text-left">
+                        ➔ Nashik to Dhule
+                    </button>
+                    <button onclick="quickBookRoute('Nashik', 'Kolhapur / Satara')" class="bg-dark-800 hover:bg-brand-500 hover:text-dark-900 p-2.5 rounded-xl border border-gray-700 transition text-left">
+                        ➔ Nashik to Kolhapur
+                    </button>
+                    <button onclick="quickBookRoute('Nashik', 'Ahmednagar')" class="bg-dark-800 hover:bg-brand-500 hover:text-dark-900 p-2.5 rounded-xl border border-gray-700 transition text-left">
+                        ➔ Nashik to Ahmednagar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 9. Customer Reviews & Ratings -->
+    <section id="reviews" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <div class="flex justify-center items-center gap-1.5 text-yellow-500 text-lg mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <h2 class="text-3xl font-black text-dark-900">What Passengers Say About Sarthi</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-brand-500 text-dark-900 font-black rounded-full flex items-center justify-center">S</div>
+                        <div>
+                            <h4 class="font-black text-sm text-dark-900">Sanjay Deshmukh</h4>
+                            <p class="text-[11px] text-gray-500">Nashik to Mumbai Airport Ride</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed italic">"Extremely prompt service. Cab arrived at 4 AM in Nashik for my flight. Driver drove carefully and car was squeaky clean."</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-dark-900 text-brand-400 font-black rounded-full flex items-center justify-center">M</div>
+                        <div>
+                            <h4 class="font-black text-sm text-dark-900">Manisha Patil</h4>
+                            <p class="text-[11px] text-gray-500">Trimbakeshwar Family Trip</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed italic">"Booked Ertiga for Trimbakeshwar & Panchavati. Fixed rate without any surprise charges. Very polite behavior."</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-brand-500 text-dark-900 font-black rounded-full flex items-center justify-center">V</div>
+                        <div>
+                            <h4 class="font-black text-sm text-dark-900">Vijay Kadam</h4>
+                            <p class="text-[11px] text-gray-500">Nashik to Pune Outstation</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed italic">"One-way fare was lowest compared to other vendors in Nashik. Instant WhatsApp confirmation. Great job Sarthi Tours!"</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Dynamic Cab Selection Modal (Triggered after Search) -->
+    <div id="cabSelectionModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-5 sm:p-6 shadow-2xl relative my-8">
+            <button onclick="closeModal('cabSelectionModal')" class="absolute right-4 top-4 text-gray-400 hover:text-black text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-5 border-b pb-3">
+                <span class="text-xs font-bold text-brand-600 uppercase tracking-widest block">Available Vehicles</span>
+                <h3 class="text-xl sm:text-2xl font-black text-dark-900">Select Your Preferred Cab</h3>
+                <p id="searchRouteSummary" class="text-xs text-gray-500 mt-1 font-semibold">Nashik ➔ Mumbai | Date: Today</p>
+            </div>
+
+            <!-- List of Cabs -->
+            <div class="space-y-4 max-h-[60vh] overflow-y-auto pr-1">
+                
+                <!-- Cab Option 1: Sedan -->
+                <div class="border-2 border-gray-200 rounded-2xl p-4 hover:border-brand-500 transition flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl font-black">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-base text-dark-900">Sedan (Swift Dzire / Etios)</h4>
+                            <p class="text-xs text-gray-500">4 Passengers + 2 Luggage Bags • AC</p>
+                            <span class="text-[11px] font-bold text-green-600"><i class="fa-solid fa-check"></i> Clean Cabs & Verified Driver</span>
+                        </div>
+                    </div>
+                    <div class="text-right w-full sm:w-auto flex sm:flex-col justify-between sm:justify-center items-center">
+                        <div>
+                            <span class="text-xs text-gray-500">Rate</span>
+                            <div class="text-xl font-black text-brand-600">₹11 / KM</div>
+                        </div>
+                        <button onclick="proceedToFinalForm('Sedan (Swift Dzire)', '₹11/km')" class="bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold px-4 py-2 rounded-xl text-xs transition mt-2">Book This Cab</button>
+                    </div>
+                </div>
+
+                <!-- Cab Option 2: SUV Ertiga -->
+                <div class="border-2 border-gray-200 rounded-2xl p-4 hover:border-brand-500 transition flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl font-black">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-base text-dark-900">SUV Ertiga</h4>
+                            <p class="text-xs text-gray-500">6 Passengers + 3 Luggage Bags • AC</p>
+                            <span class="text-[11px] font-bold text-green-600"><i class="fa-solid fa-check"></i> Spacious Family Comfort</span>
+                        </div>
+                    </div>
+                    <div class="text-right w-full sm:w-auto flex sm:flex-col justify-between sm:justify-center items-center">
+                        <div>
+                            <span class="text-xs text-gray-500">Rate</span>
+                            <div class="text-xl font-black text-brand-600">₹14 / KM</div>
+                        </div>
+                        <button onclick="proceedToFinalForm('SUV Ertiga', '₹14/km')" class="bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold px-4 py-2 rounded-xl text-xs transition mt-2">Book This Cab</button>
+                    </div>
+                </div>
+
+                <!-- Cab Option 3: Innova Crysta -->
+                <div class="border-2 border-gray-200 rounded-2xl p-4 hover:border-brand-500 transition flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl font-black">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-base text-dark-900">Innova Crysta Luxury</h4>
+                            <p class="text-xs text-gray-500">7 Passengers + 4 Luggage Bags • Premium AC</p>
+                            <span class="text-[11px] font-bold text-green-600"><i class="fa-solid fa-check"></i> Maximum Comfort for Long Drives</span>
+                        </div>
+                    </div>
+                    <div class="text-right w-full sm:w-auto flex sm:flex-col justify-between sm:justify-center items-center">
+                        <div>
+                            <span class="text-xs text-gray-500">Rate</span>
+                            <div class="text-xl font-black text-brand-600">₹18 / KM</div>
+                        </div>
+                        <button onclick="proceedToFinalForm('Innova Crysta Luxury', '₹18/km')" class="bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold px-4 py-2 rounded-xl text-xs transition mt-2">Book This Cab</button>
+                    </div>
+                </div>
+
+                <!-- Cab Option 4: Tempo Traveller -->
+                <div class="border-2 border-gray-200 rounded-2xl p-4 hover:border-brand-500 transition flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl font-black">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-base text-dark-900">Tempo Traveller (13/17 Seater)</h4>
+                            <p class="text-xs text-gray-500">Group Travel Special • AC & Pushback Seats</p>
+                            <span class="text-[11px] font-bold text-green-600"><i class="fa-solid fa-check"></i> Ideal for Pilgrimage Groups</span>
+                        </div>
+                    </div>
+                    <div class="text-right w-full sm:w-auto flex sm:flex-col justify-between sm:justify-center items-center">
+                        <div>
+                            <span class="text-xs text-gray-500">Rate</span>
+                            <div class="text-xl font-black text-brand-600">₹24 / KM</div>
+                        </div>
+                        <button onclick="proceedToFinalForm('Tempo Traveller', '₹24/km')" class="bg-brand-500 hover:bg-brand-600 text-dark-900 font-extrabold px-4 py-2 rounded-xl text-xs transition mt-2">Book This Cab</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Booking Confirmation Modal -->
+    <div id="finalBookingModal" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="closeModal('finalBookingModal')" class="absolute right-4 top-4 text-gray-400 hover:text-black text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-4">
+                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl font-black">
+                    <i class="fa-solid fa-taxi"></i>
+                </div>
+                <h3 class="text-xl font-black text-dark-900">Confirm Your Booking</h3>
+                <p class="text-xs text-gray-500">Sarthi Tours & Travels • Nashik</p>
+            </div>
+
+            <!-- Ride Summary Box -->
+            <div class="bg-gray-50 p-4 rounded-xl mb-4 text-xs space-y-2 border border-gray-200">
+                <div class="flex justify-between"><span class="text-gray-500">Trip Type:</span> <span id="modalTripType" class="font-bold text-dark-900">ONE WAY</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Pickup Location:</span> <span id="modalPickup" class="font-bold text-dark-900">Nashik</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Drop Location:</span> <span id="modalDrop" class="font-bold text-dark-900">Mumbai</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Selected Vehicle:</span> <span id="modalVehicle" class="font-bold text-brand-600">Sedan</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Departure Date & Time:</span> <span id="modalDateTime" class="font-bold text-dark-900">Today @ 09:00 AM</span></div>
+            </div>
+
+            <!-- Customer Details Form -->
+            <form onsubmit="submitBookingRequest(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Your Full Name</label>
+                    <input type="text" id="custName" required placeholder="Enter name" class="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs font-bold focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Mobile / WhatsApp Number</label>
+                    <input type="tel" id="custPhone" required placeholder="10-digit phone number" class="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs font-bold focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Exact Pickup Landmark / Address</label>
+                    <input type="text" id="custAddress" required placeholder="e.g. Nashik Road Railway Station / Dwarka Circle" class="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs font-bold focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 pt-2">
+                    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-black py-3 rounded-xl text-xs transition flex items-center justify-center gap-1.5 shadow-md">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                    </button>
+                    <a href="tel:9209054314" class="w-full bg-dark-900 hover:bg-black text-white font-black py-3 rounded-xl text-xs transition flex items-center justify-center gap-1.5 shadow-md text-center">
+                        <i class="fa-solid fa-phone text-brand-400"></i> Direct Call
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 10. Sticky Floating Buttons -->
+    <!-- Call Left Floating Button -->
+    <a href="tel:9209054314" class="fixed bottom-6 left-6 z-40 bg-dark-900 hover:bg-black text-brand-400 border-2 border-brand-500 p-3.5 rounded-full shadow-2xl flex items-center gap-2 font-black text-xs transition transform hover:scale-105">
+        <i class="fa-solid fa-phone text-lg"></i>
+        <span class="hidden sm:inline">Call: 9209054314</span>
+    </a>
+
+    <!-- WhatsApp Right Floating Button -->
+    <a href="https://wa.me/919209054314?text=Hello%20Sarthi%20Tours%20and%20Travels,%20I%20want%20to%20book%20a%20cab." target="_blank" class="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition transform hover:scale-110 bounce-subtle">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 text-gray-400 pt-12 pb-6 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-dark-900 font-black text-xl">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-black text-white block tracking-tight">SARTHI <span class="text-brand-500">TOURS</span></span>
+                        <span class="text-[9px] text-gray-500 uppercase font-bold block -mt-1">& Travels • Nashik</span>
+                    </div>
+                </div>
+                <p class="text-xs leading-relaxed text-gray-400">Your trusted travel partner in Nashik for hassle-free outstation taxi, airport transfers, and temple pilgrimage tours across Maharashtra.</p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-black text-sm mb-3">Quick Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#booking" class="hover:text-brand-400 transition">Book Online Cab</a></li>
+                    <li><a href="#tariff" class="hover:text-brand-400 transition">Taxi Fare Rates</a></li>
+                    <li><a href="#packages" class="hover:text-brand-400 transition">Pilgrimage Tour Packages</a></li>
+                    <li><a href="#routes" class="hover:text-brand-400 transition">Nashik Outstation Routes</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-black text-sm mb-3">Popular Nashik Taxi</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#booking" onclick="quickBookRoute('Nashik', 'Mumbai Airport')" class="hover:text-brand-400 transition">Nashik to Mumbai Airport Cab</a></li>
+                    <li><a href="#booking" onclick="quickBookRoute('Nashik', 'Pune')" class="hover:text-brand-400 transition">Nashik to Pune Taxi</a></li>
+                    <li><a href="#booking" onclick="quickBookRoute('Nashik', 'Shirdi')" class="hover:text-brand-400 transition">Nashik to Shirdi Cab</a></li>
+                    <li><a href="#booking" onclick="quickBookRoute('Nashik', 'Trimbakeshwar')" class="hover:text-brand-400 transition">Nashik to Trimbakeshwar Taxi</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-black text-sm mb-3">Contact Sarthi Travels</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="tel:9209054314" class="hover:text-brand-400 transition"><i class="fa-solid fa-phone text-brand-400 mr-2"></i> +91 9209054314</a></li>
+                    <li><a href="https://wa.me/919209054314" target="_blank" class="hover:text-brand-400 transition"><i class="fa-brands fa-whatsapp text-green-400 mr-2"></i> +91 9209054314</a></li>
+                    <li><a href="mailto:jayashreegaware8@gmail.com" class="hover:text-brand-400 transition"><i class="fa-solid fa-envelope text-brand-400 mr-2"></i> jayashreegaware8@gmail.com</a></li>
+                    <li><i class="fa-solid fa-location-dot text-brand-400 mr-2"></i> Dwarka Circle / Nashik Road, Nashik</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+            © <script>document.write(new Date().getFullYear())</script> Sarthi Tours & Travels Nashik. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // State variables
+        let currentTab = 'oneway';
+        let currentBookingData = {
+            tripType: 'One Way',
+            pickup: 'Nashik',
+            drop: 'Mumbai',
+            vehicle: 'Sedan (Swift Dzire)',
+            dateTime: ''
+        };
+
+        // Set default departure date input to today
+        document.getElementById('dateInput').valueAsDate = new Date();
+
+        // Mobile Menu Functions
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // Tab Switching Logic
+        function switchTab(tab) {
+            currentTab = tab;
+            const tabs = ['oneway', 'local', 'roundtrip', 'airport'];
+
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                if (t === tab) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Toggle form fields based on Tab
+            const fieldDrop = document.getElementById('field-drop');
+            const fieldPackage = document.getElementById('field-package');
+            const fieldAirportType = document.getElementById('field-airport-type');
+            const fieldReturnDate = document.getElementById('field-return-date');
+
+            fieldDrop.classList.remove('hidden');
+            fieldPackage.classList.add('hidden');
+            fieldAirportType.classList.add('hidden');
+            fieldReturnDate.classList.add('hidden');
+
+            if (tab === 'local') {
+                fieldDrop.classList.add('hidden');
+                fieldPackage.classList.remove('hidden');
+            } else if (tab === 'airport') {
+                fieldAirportType.classList.remove('hidden');
+            } else if (tab === 'roundtrip') {
+                fieldReturnDate.classList.remove('hidden');
+            }
+        }
+
+        // Handle Hero Search Button Click
+        function handleSearchCabs(e) {
+            e.preventDefault();
+            const pickup = document.getElementById('pickupInput').value || 'Nashik';
+            let drop = document.getElementById('dropInput').value || 'Destination';
+
+            if (currentTab === 'local') {
+                drop = document.getElementById('packageInput').value;
+            }
+
+            const date = document.getElementById('dateInput').value;
+            const time = document.getElementById('timeInput').value;
+
+            currentBookingData.tripType = currentTab.toUpperCase();
+            currentBookingData.pickup = pickup;
+            currentBookingData.drop = drop;
+            currentBookingData.dateTime = `${date} at ${time}`;
+
+            document.getElementById('searchRouteSummary').innerText = `${pickup} ➔ ${drop} | Pickup: ${date} @ ${time}`;
+            document.getElementById('cabSelectionModal').classList.remove('hidden');
+        }
+
+        // Choose Car from Modal or Rate Chart
+        function proceedToFinalForm(vehicleName, rateText) {
+            currentBookingData.vehicle = vehicleName;
+            
+            // Populate Final Confirmation Modal
+            document.getElementById('modalTripType').innerText = currentBookingData.tripType || 'ONE WAY';
+            document.getElementById('modalPickup').innerText = currentBookingData.pickup || 'Nashik';
+            document.getElementById('modalDrop').innerText = currentBookingData.drop || 'Outstation';
+            document.getElementById('modalVehicle').innerText = `${vehicleName} (${rateText})`;
+            document.getElementById('modalDateTime').innerText = currentBookingData.dateTime || 'As per request';
+
+            closeModal('cabSelectionModal');
+            document.getElementById('finalBookingModal').classList.remove('hidden');
+        }
+
+        // Select Car directly from Tariff Chart
+        function selectCarAndBook(carName, ratePerKm) {
+            currentBookingData.tripType = 'DIRECT SELECTION';
+            currentBookingData.pickup = 'Nashik';
+            currentBookingData.drop = 'Outstation / Local';
+            currentBookingData.dateTime = 'As requested';
+            proceedToFinalForm(carName, `₹${ratePerKm}/km`);
+        }
+
+        // Direct Quick Booking shortcuts for Popular Routes & Packages
+        function quickBookRoute(pickup, drop) {
+            switchTab('oneway');
+            document.getElementById('pickupInput').value = pickup;
+            document.getElementById('dropInput').value = drop;
+            currentBookingData.tripType = 'ONE WAY';
+            currentBookingData.pickup = pickup;
+            currentBookingData.drop = drop;
+            proceedToFinalForm('Sedan (Swift Dzire)', '₹11/km');
+        }
+
+        function quickBookPackage(packageName, price) {
+            currentBookingData.tripType = 'TOUR PACKAGE';
+            currentBookingData.pickup = 'Nashik Hub';
+            currentBookingData.drop = packageName;
+            proceedToFinalForm(packageName, `Starting ₹${price}`);
+        }
+
+        // Close Modal Helper
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Submit Booking & Redirect to WhatsApp
+        function submitBookingRequest(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
+
+            const textMsg = `*New Cab Booking Request - Sarthi Travels*%0A%0A` +
+                            `*Name:* ${encodeURIComponent(name)}%0A` +
+                            `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                            `*Trip Type:* ${encodeURIComponent(currentBookingData.tripType)}%0A` +
+                            `*Pickup:* ${encodeURIComponent(currentBookingData.pickup)}%0A` +
+                            `*Drop / Package:* ${encodeURIComponent(currentBookingData.drop)}%0A` +
+                            `*Vehicle:* ${encodeURIComponent(currentBookingData.vehicle)}%0A` +
+                            `*Pickup Address:* ${encodeURIComponent(address)}%0A` +
+                            `*Date/Time:* ${encodeURIComponent(currentBookingData.dateTime)}`;
+
+            window.open(`https://wa.me/919209054314?text=${textMsg}`, '_blank');
+            closeModal('finalBookingModal');
+        }
+    </script>
+</body>
 </html>
